@@ -1,198 +1,53 @@
 [{
     "last_name": "White",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-03-01",
-        "expiry_date": null
-    }],
     "first_name": "Frank",
     "id": 2634
 }, {
     "last_name": "Brown",
-    "qualifications": [{
-        "qual_string": "Morning",
-        "commencement_date": "2018-03-01",
-        "expiry_date": null
-    }],
     "first_name": "Sally",
     "id": 2635
 }, {
     "last_name": "Purple",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-03-01",
-        "expiry_date": null
-    }, {
-        "qual_string": "Morning",
-        "commencement_date": "2018-03-01",
-        "expiry_date": null
-    }, {
-        "qual_string": "Night",
-        "commencement_date": "2018-03-01",
-        "expiry_date": null
-    }],
     "first_name": "Dylan",
     "id": 2636
 }, {
     "last_name": "Yellow",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-03-01",
-        "expiry_date": null
-    }, {
-        "qual_string": "Morning",
-        "commencement_date": "2018-02-28",
-        "expiry_date": null
-    }],
     "first_name": "Tom",
     "id": 2637
 }, {
     "last_name": "Blue",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-04-02",
-        "expiry_date": null
-    }, {
-        "qual_string": "Morning",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }, {
-        "qual_string": "Night",
-        "commencement_date": "2018-04-12",
-        "expiry_date": null
-    }],
     "first_name": "Andrew",
     "id": 2639
 }, {
     "last_name": "Black",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-04-01",
-        "expiry_date": null
-    }, {
-        "qual_string": "Morning",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }, {
-        "qual_string": "Night",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }],
     "first_name": "Sarah",
     "id": 2640
 }, {
     "last_name": "Red",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }, {
-        "qual_string": "Night",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }, {
-        "qual_string": "Morning",
-        "commencement_date": "2018-04-04",
-        "expiry_date": null
-    }],
     "first_name": "Paul",
     "id": 2641
 }, {
     "last_name": "Green",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }, {
-        "qual_string": "Morning",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }, {
-        "qual_string": "Night",
-        "commencement_date": "2018-04-04",
-        "expiry_date": null
-    }],
     "first_name": "Steven",
     "id": 2642
 }, {
     "last_name": "Orange",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }, {
-        "qual_string": "Morning",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }],
     "first_name": "David",
     "id": 2643
 }, {
     "last_name": "Cyan",
-    "qualifications": [{
-        "qual_string": "Morning",
-        "commencement_date": "2018-04-12",
-        "expiry_date": null
-    }, {
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-04-12",
-        "expiry_date": null
-    }, {
-        "qual_string": "Night",
-        "commencement_date": "2018-04-03",
-        "expiry_date": null
-    }],
     "first_name": "Rachel",
     "id": 2644
 }, {
     "last_name": "Magenta",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }, {
-        "qual_string": "Morning",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }, {
-        "qual_string": "Night",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }],
     "first_name": "John",
     "id": 2645
 }, {
     "last_name": "Teal",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-04-02",
-        "expiry_date": null
-    }, {
-        "qual_string": "Morning",
-        "commencement_date": "2018-04-03",
-        "expiry_date": null
-    }, {
-        "qual_string": "Night",
-        "commencement_date": "2018-04-12",
-        "expiry_date": null
-    }],
     "first_name": "Ashley",
     "id": 2646
 }, {
     "last_name": "Grey",
-    "qualifications": [{
-        "qual_string": "Afternoon",
-        "commencement_date": "2018-04-04",
-        "expiry_date": null
-    }, {
-        "qual_string": "Morning",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }, {
-        "qual_string": "Night",
-        "commencement_date": "2018-04-05",
-        "expiry_date": null
-    }],
     "first_name": "Emily",
     "id": 2647
 }]
