@@ -22,3 +22,5 @@ If any of the requirements are unclear feel free to send through questions for c
 
 Please create your solution in a fork off this repo.
 When you're ready to share your solution with us, email a link to your recruiter or Biarri contact.
+
+While not required, if part of completing this challenge involves wireframing, paper prototyping, mockups or similar please add them to a folder in your repo.
