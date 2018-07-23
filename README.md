@@ -4,10 +4,11 @@ For this challenge, we are looking for you to create a simple rostering solution
 For example this could be used for a small business that works 24/7 to manage the shifts of it's employees to make sure everyone gets adequate days off and doesn't get shifts which are directly back-to-back (eg working on a night shift followed by a morning shift the next day)
 
 We're providing you with three mock data JSON files:
-- Configuration: General information about the location which the roster is for including the timezone and title 
-- Employees: The people who are being rostered
-- Shifts: These are the bits of work assigned to employees. If a shift is assigned to an employee, it will have it's employee_id property set to an integer matching the id field on the employee.
-- Role: The type/label of the shift. Each shift will have a role_id which corresponds to a role.
+
+ - Configuration: General information about the location which the roster is for including the timezone and title 
+ - Employees: The people who are being rostered
+ - Shifts: These are the bits of work assigned to employees. If a shift is assigned to an employee, it will have it's employee_id property set to an integer matching the id field on the employee.
+ - Role: The type/label of the shift. Each shift will have a role_id which corresponds to a role.
 
 The amount of time you spend on this exercise is up to you, however we're looking for it to meet the following guidelines:
 
