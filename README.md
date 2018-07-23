@@ -14,9 +14,9 @@ The amount of time you spend on this exercise is up to you, however we're lookin
  - The app should use React as a base framework - any library choices beyond this are up to you.
  - The app should display the whole week of rostering information for the employees in the mock data set.
  - The roster must be represented in both a tabular format, and also a visualisation of some form - we're looking for something that would aid end users in understanding the information they're being presented with.
- - The data provides DateTimes in UTC, but the configuration will specify a timezone property - make sure that you’re using this to format your date times! We want to see the data in the context of their timezone, not your local time zone.
+ - The data provides DateTimes in UTC, but the configuration will specify a timezone property - make sure that you're using this to format your date times! We want to see the data in the context of their timezone, not your local time zone.
  - The ability to edit the start/end times of a shift (you do not need to be able to edit any additional data, create or delete shifts)
 
 If any of the requirements are unclear feel free to send through questions for clarification or make assumptions - we are not trying to test you on your knowledge of rostering.
 
-When you're ready to share your solution with us, please create a public repo and email a link to your recruiter or Biarri contact. 
+When you're ready to share your solution with us, please create a public repo and email a link to your recruiter or Biarri contact.
