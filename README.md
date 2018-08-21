@@ -25,5 +25,4 @@ When you're ready to share your solution with us, email a link to your recruiter
 
 While not required, if part of completing this challenge involves wireframing, paper prototyping, mockups or similar please add them to a folder in your repo.
 
-Lastly note that we only suggest spending 2-3 hours on this exercise - it is not meant to be a masterpiece. 
-If there are additional things you think you could have done better/did not have enough time to complete, feel free to compile a quick list and bring it to the technical interview to help remind yourself during the discussion.
+On completion, if there are additional things you think you could have done better/did not have enough time to complete, feel free to compile a quick list and bring it to the technical interview to help remind yourself during the discussion.
