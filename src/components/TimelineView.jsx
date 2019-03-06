@@ -7,43 +7,6 @@ import moment from 'moment'
 import 'moment-timezone';
 
 class TimelineView extends Component {
-  handleItemMove = (itemId, dragTime, newGroupOrder) => {
-    const { items, groups } = this.state;
-
-    // const group = groups[newGroupOrder];
-    //
-    // this.setState({
-    //   items: items.map(item =>
-    //     item.id === itemId
-    //       ? Object.assign({}, item, {
-    //         start: dragTime,
-    //         end: dragTime + (item.end - item.start),
-    //         group: group.id
-    //       })
-    //       : item
-    //   )
-    // });
-
-    console.log("Moved", itemId, dragTime, newGroupOrder);
-  };
-
-  handleItemResize = (itemId, time, edge) => {
-    const { items } = this.state;
-
-    // this.setState({
-    //   items: items.map(item =>
-    //     item.id === itemId
-    //       ? Object.assign({}, item, {
-    //         start: edge === "left" ? time : item.start,
-    //         end: edge === "left" ? item.end : time
-    //       })
-    //       : item
-    //   )
-    // });
-
-    console.log("Resized", itemId, time, edge);
-  };
-
   render() {
     const {shiftsByEmployee, employeeGroups, shop} = this.props;
 
