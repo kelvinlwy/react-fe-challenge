@@ -1,0 +1,16 @@
+.react-calendar-timeline .rct-header-container {
+
+
+  & > div {
+    //width: 100% !important; //fix the header width with hack which is only for the sidebar title not being used
+  }
+
+  .rct-sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+

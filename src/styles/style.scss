@@ -1,0 +1,29 @@
+// 7-1 pattern https://sass-guidelin.es/#the-7-1-pattern
+@import 'vendors/normalize/normalize';     // Normailze CSS
+@import 'vendors/bourbon/bourbon';         // Bourbon SASS Mixins Library
+@import 'vendors/neat/neat';               // Neat SASS Grid
+
+// Themes
+
+// Helpers
+@import 'helpers/palette';
+@import 'helpers/variables';
+@import 'helpers/helper';
+@import 'helpers/typo';
+
+// Base
+@import 'base/base';
+
+// Vendors
+@import 'vendors/react-calendar-timeline';     // React Timeline
+@import 'vendors/react-calendar';              // React Big Calendar
+
+// Pages
+
+// Layouts
+@import 'layouts/layout';
+
+// Components
+@import 'components/topbar';
+@import 'components/tabs';
+@import 'components/paginator';

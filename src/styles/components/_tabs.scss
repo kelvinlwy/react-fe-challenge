@@ -1,0 +1,19 @@
+.tabs {
+  $tabs: &;
+  height: 100%;
+  padding: 32px;
+
+  &__wrapper {
+    @include clearfix;
+
+    height: 100%;
+
+    #{$tabs}__table {
+      @include clearfix;
+
+      height: calc(100% - #{$tabs-header-height});
+      position: relative;
+      overflow: auto;
+    }
+  }
+}

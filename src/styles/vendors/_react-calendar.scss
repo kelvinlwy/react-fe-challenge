@@ -1,0 +1,11 @@
+.rbc-calendar {
+  font-family: $base-font-family;
+  height: calc(100% - #{$tabs-header-height}) !important;
+
+  .rbc-toolbar {
+    margin: 8px;
+  }
+}
+
+
+

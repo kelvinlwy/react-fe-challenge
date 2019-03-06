@@ -1,0 +1,32 @@
+/*===================================
+=            Brand Color            =
+===================================*/
+$brand-primary-color: 						#6b6b6b;
+$brand-primary-color-dark: 					darken($brand-primary-color, 20%);
+$brand-primary-color-light: 			    lighten($brand-primary-color, 20%);
+$brand-secondary-color: 					#ee1c24;
+$brand-secondary-color-dark: 				darken($brand-secondary-color, 20%);
+$brand-secondary-color-light: 				lighten($brand-secondary-color, 20%);
+
+$brand-success:                     #27AE60;
+$brand-error:                       #C0392B;
+
+$brand-support-main: 				#22282D;
+$brand-support-primary: 			#72849C;
+$brand-support-secondary: 			#B8C6D1;
+
+// Grey Support Color
+$grey-color-darkest: 				#333333;
+$grey-color-darker: 				#555555;
+$grey-color-dark: 					#777777;
+$grey-color: 						#999999;
+$grey-color-light: 					#B9B9B9;
+$grey-color-lighter: 				#EEEEEE;
+$grey-color-lightest: 				#F4F4F4;
+
+// Custom Colors Variables
+$text-color: 						$brand-support-main;
+$text-color-dark:                   darken($brand-support-main, 20%);
+$text-color-light:                  lighten($brand-support-main, 20%);
+$border-color: 						#E0E2E6;
+$page-content-background-color:     #FCFCFC;
