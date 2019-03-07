@@ -17,8 +17,8 @@ const mapStateToProps = (state) => {
         return {
           ...shift,
           start_date: moment.utc(shift.start_time).tz(state.shop.timezone).format('D MMM YYYY (ddd)'),
-          start_time: moment.utc(shift.start_time).tz(state.shop.timezone).format('D MMM YY HH:mm'),
-          end_time: moment.utc(shift.end_time).tz(state.shop.timezone).format('D MMM YY HH:mm'),
+          start_time: moment.utc(shift.start_time).tz(state.shop.timezone).format('D MMM YYYY HH:mm'),
+          end_time: moment.utc(shift.end_time).tz(state.shop.timezone).format('D MMM YYYY HH:mm'),
           break_duration: `${duration.asMinutes()} minutes`
         }
       }),

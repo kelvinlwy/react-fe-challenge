@@ -7,7 +7,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
 import moment from 'moment'
 import 'moment-timezone';
-import ChangeShiftDialog from './ChangeShiftDialog';
+import ChangeShiftDialog from '../containers/ChangeShiftDialogContainer';
 
 const localizer = BigCalendar.momentLocalizer(moment);
 const DragAndDropCalendar = withDragAndDrop(BigCalendar);
@@ -34,17 +34,11 @@ class CalendarView extends Component {
     };
   };
 
-  handleEventSelect = (event) => {
+  handleEventSelect = (shift) => {
 
     this.setState({
       open: true,
-      shiftId: event.id,
-      employeeId: event.employee.id,
-      dialogTitle: `Edit ${event.employee.first_name} ${event.employee.last_name} (${event.role.name}) shift`,
-      startTime: moment(event.start_time).format("HH:mm"),
-      endTime: moment(event.end_time).format("HH:mm"),
-      startDate: moment(event.start_time).format("YYYY-MM-DD"),
-      endDate: moment(event.end_time).format("YYYY-MM-DD"),
+      selectedShift: shift,
       dialogErrorMessage: ""
     });
   };
@@ -73,30 +67,9 @@ class CalendarView extends Component {
     this.setState({open: false});
   };
 
-  handleUpdateShift = (startDate, endDate, startTime, endTime) => {
-    const startDateTime = moment.tz(`${startDate} ${startTime}`, this.props.shop.timezone);
-    const endDateTime = moment.tz(`${endDate} ${endTime}`, this.props.shop.timezone);
-
-    const diff = endDateTime.diff(startDateTime, 'hours', true);
-    const invalidRange = startDateTime.isAfter(endDateTime);
-
-    if (invalidRange) {
-      this.setState({dialogErrorMessage: "Invalid shift"});
-    } else if (diff <= 2) {
-      this.setState({dialogErrorMessage: `${diff}hr${diff > 1 ? "s" : ''}!? Your employee is a hard worker!`});
-    } else if (diff >= 12) {
-      this.setState({dialogErrorMessage: `Don't be too harsh to your employee!`});
-    } else {
-      this.setState({dialogErrorMessage: ""}, () => {
-        this.props.updateShiftTime(this.state.shiftId, startDateTime, endDateTime);
-        this.handleClose();
-      });
-    }
-  };
-
   render() {
     const {shifts, firstDateToShow} = this.props;
-    const {open, dialogTitle, startDate, endDate, startTime, endTime, dialogErrorMessage} = this.state;
+    const {open, selectedShift} = this.state;
 
     return (
       <Fragment>
@@ -122,14 +95,8 @@ class CalendarView extends Component {
           open &&
           <ChangeShiftDialog
             open={open}
-            dialogTitle={dialogTitle}
-            startDate={startDate}
-            endDate={endDate}
-            startTime={startTime}
-            endTime={endTime}
             handleClose={this.handleClose}
-            handleUpdateShift={this.handleUpdateShift}
-            dialogErrorMessage={dialogErrorMessage}
+            shift={selectedShift}
           />
         }
       </Fragment>

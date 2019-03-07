@@ -9,14 +9,18 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import TextField from '@material-ui/core/TextField';
+import moment from "moment";
 
 class ChangeShiftDialog extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      start_time: props.startTime,
-      end_time: props.endTime
+      startTime: moment(props.shift.start_time).format("HH:mm"),
+      endTime: moment(props.shift.end_time).format("HH:mm"),
+      startDate: moment(props.shift.start_time).format("YYYY-MM-DD"),
+      endDate: moment(props.shift.end_time).format("YYYY-MM-DD"),
+      errorMessage: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -28,10 +32,34 @@ class ChangeShiftDialog extends Component {
     });
   };
 
+  handleUpdateShift = () => {
+    const {startDate, endDate, startTime, endTime} = this.state;
+    const startDateTime = moment.tz(`${startDate} ${startTime}`, this.props.shop.timezone);
+    const endDateTime = moment.tz(`${endDate} ${endTime}`, this.props.shop.timezone);
+
+    const diff = endDateTime.diff(startDateTime, 'hours', true);
+    const invalidRange = startDateTime.isAfter(endDateTime);
+
+    if (invalidRange) {
+      this.setState({errorMessage: "Invalid shift"});
+    } else if (diff <= 2) {
+      this.setState({errorMessage: `${diff}hr${diff > 1 ? "s" : ''}!? Your employee is a hard worker!`});
+    } else if (diff >= 12) {
+      this.setState({errorMessage: `Don't be too harsh to your employee!`});
+    } else {
+      this.setState({errorMessage: ""}, () => {
+        this.props.updateShiftTime(this.props.shift.id, startDateTime, endDateTime);
+        this.props.handleClose();
+      });
+    }
+  };
+
   render() {
-    const {open, dialogTitle, startDate, endDate, handleClose, dialogErrorMessage} = this.props;
-    const {start_time, end_time} = this.state;
-    const error = dialogErrorMessage && dialogErrorMessage.length > 0;
+    const {open, handleClose, shift} = this.props;
+    const {startTime, endTime, startDate, endDate, errorMessage} = this.state;
+    const error = errorMessage && errorMessage.length > 0;
+
+    const dialogTitle = `Edit ${shift.employee.first_name} ${shift.employee.last_name} (${shift.role.name}) shift`;
 
     return (
       <Dialog
@@ -56,14 +84,14 @@ class ChangeShiftDialog extends Component {
             <InputLabel htmlFor="start-time">Start Time</InputLabel>
             <Input
               id="start-time"
-              onChange={this.handleChange("start_time")}
+              onChange={this.handleChange("startTime")}
               aria-describedby="start-time-error-text"
-              value={start_time}
-              name={"start_time"}
+              value={startTime}
+              type={"time"}
             />
             {
               error &&
-              <FormHelperText id="start-time-error-text">{dialogErrorMessage}</FormHelperText>
+              <FormHelperText id="start-time-error-text">{errorMessage}</FormHelperText>
             }
           </FormControl>
 
@@ -81,14 +109,14 @@ class ChangeShiftDialog extends Component {
             <InputLabel htmlFor="end-time">End Time</InputLabel>
             <Input
               id="end-time"
-              onChange={this.handleChange("end_time")}
+              onChange={this.handleChange("endTime")}
               aria-describedby="end-time-error-text"
-              value={end_time}
-              name={"end_time"}
+              value={endTime}
+              type={"time"}
             />
             {
               error &&
-              <FormHelperText id="end-time-error-text">{dialogErrorMessage}</FormHelperText>
+              <FormHelperText id="end-time-error-text">{errorMessage}</FormHelperText>
             }
           </FormControl>
 
@@ -96,7 +124,7 @@ class ChangeShiftDialog extends Component {
             <Button onClick={handleClose} color="primary">
               Cancel
             </Button>
-            <Button onClick={() => this.props.handleUpdateShift(startDate, endDate, start_time, end_time)}
+            <Button onClick={this.handleUpdateShift}
                     color="secondary" variant="contained">
               Update
             </Button>
@@ -109,14 +137,9 @@ class ChangeShiftDialog extends Component {
 
 ChangeShiftDialog.propTypes = {
   open: PropTypes.bool.isRequired,
-  dialogTitle: PropTypes.string.isRequired,
-  dialogErrorMessage: PropTypes.string,
-  startDate: PropTypes.string.isRequired,
-  endDate: PropTypes.string.isRequired,
-  startTime: PropTypes.string.isRequired,
-  endTime: PropTypes.string.isRequired,
   handleClose: PropTypes.func.isRequired,
   handleUpdateShift: PropTypes.func.isRequired,
+  shift: PropTypes.object.isRequired
 };
 
 export default ChangeShiftDialog;
